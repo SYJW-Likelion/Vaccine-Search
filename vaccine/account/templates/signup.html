@@ -1,0 +1,25 @@
+{%block content%}
+<h1>sign up</h1>
+<form action="{%url 'signup'%}" method="POST">
+    {%csrf_token%}
+    username:
+    <br>
+    <input name="username" placeholder="username" type="text">
+    <br>
+    password:
+    <br>
+    <input name="password1" placeholder="password" type="password">
+    <br>
+    confirm password:
+    <br>
+    <input name="password2" placeholder="confirm password" type="password">
+
+    
+    
+    <br><br>
+    <button type="submit">submit</button>
+
+
+
+</form>
+{%endblock%}
