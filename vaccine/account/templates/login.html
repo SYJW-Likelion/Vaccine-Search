@@ -1,18 +1,26 @@
+{%load static%}
 {%block content%}
-<h1>login</h1>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{%static 'css/login.css'%}">
+<div class="wrapper fadeInDown">
+  <h3 class="title">A급 백신 PLUS+</h3>
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Login </h2>
+    <h2 class="inactive underlineHover" onclick="location.href='../signup/'">Sign Up </h2>
+
 <form action="{%url 'login'%}" method="POST">
     {%csrf_token%}
-    username:
-    <br>
-    <input name="username" placeholder="username" type="text">
-    <br>
-    password:
-    <br>
-    <input name="password" placeholder="password" type="password">
-    <br><br>
-    <button type="submit">submit</button>
-
-	
-    
+    <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+    <input type="submit" class="fadeIn fourth" value="Log In">  
 </form>
+
+<!-- Remind Passowrd -->
+<div id="formFooter">
+  <a class="underlineHover" href="#">Forgot Password?</a>
+</div>
+
 {%endblock%}
