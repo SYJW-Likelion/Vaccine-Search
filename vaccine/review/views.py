@@ -8,7 +8,7 @@ from .forms import ReviewForm
 def reviewhome(request):
     reviews = Review.objects.all()
     reviews_list = Review.objects.all()
-    paginator = Paginator(reviews_list, 3)
+    paginator = Paginator(reviews_list, 4)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'r_home.html', {'reviews':reviews, 'posts':posts})
@@ -46,6 +46,6 @@ def edit(request, id):
         return render(request, 'r_edit.html', {'edit_form':edit_form})
 
 def delete(request, id):
-    delete_review = delete_review.objects.get(id = id)
+    delete_review = Review.objects.get(id = id)
     delete_review.delete()
     return redirect('reviewhome')

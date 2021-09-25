@@ -1,42 +1,43 @@
 {% block content %}
+<style>
+    .container {
+    width: 500px;
+    height: 200px;
+    background: pink;
+    border-radius: 10px;
+    padding: 12px;
+    line-height: 30px;
+    float:left;
+    margin:10px;
+  }
+  
+</style>
+
     {% if user.is_authenticated %}
     Welcome! {{user.username}}!
     {% endif %}
     <h1>ALL REVIEWS</h1>
-    <a href="{% url 'new' %}">New Review</a>
+    <button style="border-radius:5px; padding:5px 10px;float:left;">
+    <a href="{% url 'new' %}" style="text-decoration:none;">New Review</a></button>
 
-    <div class="container">
-    <br>
+<br><br>
     {% for review in reviews %}
+    <div class="container">
+    
          <div>
+        
         <h3>{{review.title}}</h3>
-         {{review.id}}
+         
+    
+         [작성자] {{review.writer}}
          <br>
-         {{review.writer}}
-         {{review.score}}
+         [평점] {{review.score}}
          <br>
-         {{review.summary}} <a href = "{%url 'detail' review.id %}">...more</a>
+         [후기] {{review.summary}} <a href = "{%url 'detail' review.id %}">...more</a>
         <br>
          </div>
     </div>
+    
     {% endfor %}
-    <br>
-    <!-- First Previous -->    
-    {% if posts.has_previous %}
-    <a href="?page=1">First</a>
-    <a href="?page={{posts.previous_page_number}}">Previous</a>
-    {% endif %}
 
-    <!-- 3of4  -->
-    <span>{{posts.number}}</span>
-    <span>of</span>
-    <span>{{posts.paginator.num_pages}}</span>
-
-
-    <!-- Next Last -->
-    {% if posts.has_next %}
-    <a href="?page={{posts.next_page_number}}">Next</a>
-    <a href="?page={{posts.paginator.num_pages}}">Last</a>
-    {% endif %}
-    </div>
 {% endblock %}
