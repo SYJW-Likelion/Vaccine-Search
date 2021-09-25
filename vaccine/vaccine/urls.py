@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import *
 from account.views import *
+from review.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     # path('vaccine/', vaccine, name='vaccine'),
     path('accounts/', include('account.urls')),
+
+    path('review/', include('review.urls')),
+
     path('list/', list, name='list'),
+
 
 ]

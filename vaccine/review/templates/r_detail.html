@@ -1,0 +1,39 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>All Review</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=cbnxr09zxz"></script>
+</head>
+<body>
+<h1>{{review.title}}</h1>
+<div>
+Writer: {{review.writer}}
+<br>
+Date: {{review.pub_date}}
+<br>
+Score: {{review.score}}
+</div>
+<hr>
+<p>{{review.body}}</p>
+<div id="map" style="width:50%;height:400px;" class="container"></div>
+<script>
+var map = new naver.maps.Map('map', {
+    center: new naver.maps.LatLng(37.5234057,127.0358495),
+    zoom: 15
+});
+
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.5234057,127.0358495),
+    map: map
+});
+</script>
+
+<br>
+<a href="{% url 'edit' review.id %}">Modify</a>
+<a href="{% url 'delete' review.id %}">Delete</a>
+{% endblock %}
