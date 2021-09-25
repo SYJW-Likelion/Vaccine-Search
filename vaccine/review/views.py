@@ -46,6 +46,6 @@ def edit(request, id):
         return render(request, 'r_edit.html', {'edit_form':edit_form})
 
 def delete(request, id):
-    delete_review = delete_review.objects.get(id = id)
+    delete_review = Review.objects.get(id = id)
     delete_review.delete()
     return redirect('reviewhome')
