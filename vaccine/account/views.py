@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+
 # Create your views here.
 
 # 로그인 성공시 home으로 돌아가고 실패할 시 signup으로 돌아옴
