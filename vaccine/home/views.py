@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from home.api import *
+from .models import Blog
 
 # Create your views here.
 # def home(request):
@@ -11,7 +12,7 @@ def home(request):
 
 # def vaccine(request):
 #     res=get_ill_list()
-#     hospitals=res.get('대단해')
+#     hospitals=res.get('강북삼성병원')
 #     context={'hospitals':hospitals}
 #     return render(request, 'vaccine_api.html', context)
 
@@ -27,3 +28,8 @@ def home(request):
 #     hospitals=res.get()
 #     context={'hospitals':hospitals}
 #     return render(request, ''))
+
+def list(request):
+    blogs=Blog.objects.all()
+    return render(request, 'list.html', {'blogs':blogs})
+

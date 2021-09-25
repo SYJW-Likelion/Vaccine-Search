@@ -1,0 +1,22 @@
+{% block content %}
+
+<h1>Creating New Review!</h1>
+
+<form action="{%url 'new'%}" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {% for field in form %}
+    <div>
+        <p>
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.errors %}
+                {% for e in field.errors %}
+                    <p style="color:palevioletred;">{{ e | escape }}</p>
+                {% endfor %}
+            {% endif %}
+        </p>
+    </div>
+    {% endfor %}
+    <button type="submit">Review Upload</button>
+</form>
+{% endblock %}

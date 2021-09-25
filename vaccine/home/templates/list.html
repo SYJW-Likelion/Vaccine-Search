@@ -1,0 +1,28 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+{%block content%}
+<div class="category">&nbsp;가다실&nbsp;&nbsp;A형 간염&nbsp;&nbsp;대상포진&nbsp;</div>
+
+
+{%for blog in blogs%}
+<div id="card">
+<br>
+    <img src="{%static 'image/icon2.png'%}" class="icon">
+    <br>
+    {{blog.detail}}
+    <br>
+    <div style="font-size:30px;"><b>{{blog.title}}</b></div>
+    
+    {{blog.body}}
+    <br>
+    {{blog.minprice}} ~  {{blog.maxprice}}
+    <br>
+    <button class="button"><a href="{% url 'r_detail' review.id %}">바로가기</a></button>
+    <br>
+</div> 
+{%endfor%}
+
+
+{%endblock%}
