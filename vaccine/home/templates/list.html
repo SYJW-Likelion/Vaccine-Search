@@ -1,19 +1,29 @@
 {%load static%}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
 {%block content%}
+<div class="category">&nbsp;가다실&nbsp;&nbsp;A형 간염&nbsp;&nbsp;대상포진&nbsp;</div>
+
+
 {%for blog in blogs%}
+<div id="card">
 <br>
-병원명:{{blog.title}}
-<br>
-백신명:{{blog.detail}}
-<br>
-소재지:{{blog.body}}
-<br>
-최고가격:{{blog.maxprice}}
-<br>
-최저가격:{{blog.minprice}}
-<br>
-{% comment %} <a href="{%url '#' blog.id%}">button</a> {% endcomment %}
-<br>
+    <img src="{%static 'image/icon2.png'%}" class="icon">
+    <br>
+    {{blog.detail}}
+    <br>
+    <div style="font-size:30px;"><b>{{blog.title}}</b></div>
+    
+    {{blog.body}}
+    <br>
+    {{blog.minprice}} ~  {{blog.maxprice}}
+    <br>
+    <button class="button"><a href="#">바로가기</a></button>
+
+    {% comment %} <a href="{%url 'html명' blog.id%}">button</a> {% endcomment %}
+    <br>
+</div> 
 {%endfor%}
 
 
