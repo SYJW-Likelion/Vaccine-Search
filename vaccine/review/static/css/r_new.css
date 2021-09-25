@@ -1,0 +1,62 @@
+:root {
+  --primary-color: #53e3a6;
+  --teal-color: #0096a0;
+  --second-color: #39ace7;
+  --darkGray-color: #4f585e;
+}
+
+body {
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+  justify-items: end;
+}
+
+.new_card {
+  background: #67e7b2bd;
+  padding: 20px;
+  border-radius: 10px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-left: 420px;
+}
+
+.contents {
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.upload_review_btn {
+  background: white;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+
+  box-shadow: inset 0 0 0 2px var(--second-color);
+  color: var(--darkGray-color);
+  font-size: inherit;
+  font-weight: 700;
+  text-align: center;
+
+  margin-left: 100px;
+}
+
+.upload_review_btn:hover {
+  background-color: var(--second-color);
+  color: white;
+}
