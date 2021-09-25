@@ -1,5 +1,18 @@
 {% block content %}
 <!DOCTYPE html>
+<style>
+    body{text-align:center;}
+    #card {
+    width: 500px;
+    height: 400px;
+    background: pink;
+    border-radius: 10px;
+    margin: 1px 380px;
+    padding: 12px;
+    line-height: 30px;
+  }
+</style>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,16 +22,19 @@
     <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=cbnxr09zxz"></script> -->
 </head>
 <body>
+<br>
+<div id="card">
 <h1>{{review.title}}</h1>
 <div>
-Writer: {{review.writer}}
+[작성자] {{review.writer}}
 <br>
-Date: {{review.pub_date}}
+[날짜] {{review.pub_date}}
 <br>
-Score: {{review.score}}
+[평점] {{review.score}}
 </div>
 <hr>
 <p>{{review.body}}</p>
+</div>
 <!-- <div id="map" style="width:50%;height:400px;" class="container"></div>
 <script>
 var map = new naver.maps.Map('map', {
@@ -33,6 +49,8 @@ var marker = new naver.maps.Marker({
 </script> -->
 
 <br>
-<a href="{% url 'edit' review.id %}">Modify</a>
-<a href="{% url 'delete' review.id %}">Delete</a>
+<button><a href="{% url 'edit' review.id %}">Modify</a></button>
+<button><a href="{% url 'delete' review.id %}">Delete</a></button>
+<button><a href="{% url 'reviewhome' %}">ReviewHome</a></button>
+
 {% endblock %}
