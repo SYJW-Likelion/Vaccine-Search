@@ -1,0 +1,42 @@
+{% block content %}
+    {% if user.is_authenticated %}
+    Welcome! {{user.username}}!
+    {% endif %}
+    <h1>ALL REVIEWS</h1>
+    <a href="{% url 'new' %}">New Review</a>
+
+    <div class="container">
+    <br>
+    {% for review in reviews %}
+         <div>
+        <h3>{{review.title}}</h3>
+         {{review.id}}
+         <br>
+         {{review.writer}}
+         {{review.score}}
+         <br>
+         {{review.summary}} <a href = "{%url 'detail' review.id %}">...more</a>
+        <br>
+         </div>
+    </div>
+    {% endfor %}
+    <br>
+    <!-- First Previous -->    
+    {% if posts.has_previous %}
+    <a href="?page=1">First</a>
+    <a href="?page={{posts.previous_page_number}}">Previous</a>
+    {% endif %}
+
+    <!-- 3of4  -->
+    <span>{{posts.number}}</span>
+    <span>of</span>
+    <span>{{posts.paginator.num_pages}}</span>
+
+
+    <!-- Next Last -->
+    {% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}">Next</a>
+    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+    {% endif %}
+    </div>
+{% endblock %}

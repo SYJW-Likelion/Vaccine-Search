@@ -7,4 +7,5 @@ urlpatterns = [
     path('new/', new, name="new"),
     path('edit/<str:id>', edit, name = "edit"),
     path('delete/<str:id>', delete, name ="delete"),
+    path('reviewhome/', reviewhome, name = "reviewhome"),
 ]
