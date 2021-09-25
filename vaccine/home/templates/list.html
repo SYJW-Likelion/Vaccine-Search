@@ -1,0 +1,20 @@
+{%load static%}
+{%block content%}
+{%for blog in blogs%}
+<br>
+병원명:{{blog.title}}
+<br>
+백신명:{{blog.detail}}
+<br>
+소재지:{{blog.body}}
+<br>
+최고가격:{{blog.maxprice}}
+<br>
+최저가격:{{blog.minprice}}
+<br>
+{% comment %} <a href="{%url '#' blog.id%}">button</a> {% endcomment %}
+<br>
+{%endfor%}
+
+
+{%endblock%}
