@@ -5,13 +5,13 @@ from .models import Review
 from .forms import ReviewForm
 # from django.contrib import messages
 
-# def home(request):
-#     blogs = Blog.objects.all()
-#     blogs_list = Blog.objects.all()
-#     paginator = Paginator(blogs_list, 3)
-#     page = request.GET.get('page')
-#     posts = paginator.get_page(page)
-#     return render(request, 'home.html', {'blogs':blogs, 'posts':posts})
+def reviewhome(request):
+    reviews = Review.objects.all()
+    reviews_list = Review.objects.all()
+    paginator = Paginator(reviews_list, 3)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'r_home.html', {'reviews':reviews, 'posts':posts})
 
 def detail(request, id):
     review = get_object_or_404(Review, pk = id)
@@ -48,4 +48,4 @@ def edit(request, id):
 def delete(request, id):
     delete_review = delete_review.objects.get(id = id)
     delete_review.delete()
-    return redirect('detail')
+    return redirect('reviewhome')

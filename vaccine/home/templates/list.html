@@ -19,9 +19,7 @@
     <br>
     {{blog.minprice}} ~  {{blog.maxprice}}
     <br>
-    <button class="button"><a href="#">바로가기</a></button>
-
-    {% comment %} <a href="{%url 'html명' blog.id%}">button</a> {% endcomment %}
+    <button class="button"><a href="{% url 'r_detail' review.id %}">바로가기</a></button>
     <br>
 </div> 
 {%endfor%}
