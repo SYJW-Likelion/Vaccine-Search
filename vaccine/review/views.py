@@ -8,7 +8,7 @@ from .forms import ReviewForm
 def reviewhome(request):
     reviews = Review.objects.all()
     reviews_list = Review.objects.all()
-    paginator = Paginator(reviews_list, 3)
+    paginator = Paginator(reviews_list, 4)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'r_home.html', {'reviews':reviews, 'posts':posts})
