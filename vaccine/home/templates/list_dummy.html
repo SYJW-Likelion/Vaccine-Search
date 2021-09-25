@@ -1,0 +1,56 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+{%block content%}
+<div class="category">&nbsp;가다실&nbsp;&nbsp;A형 간염&nbsp;&nbsp;대상포진&nbsp;</div>
+
+
+<div id="card">
+<br>
+    <img src="{%static 'image/icon2.png'%}" class="icon">
+    <br>
+    가다실
+    <br>
+    <div style="font-size:30px;"><b>서울특별시보라매병원</b></div>
+    서울 동작구
+    <br>
+    119,686 ~ 119,686
+    <br>
+    <button class="button"><a href="#">바로가기</a></button>
+    <br>
+</div> 
+
+<div id="card">
+    <br>
+        <img src="{%static 'image/icon2.png'%}" class="icon">
+        <br>
+        {{blog.detail}}
+        <br>
+        <div style="font-size:30px;"><b>{{blog.title}}</b></div>
+        
+        {{blog.body}}
+        <br>
+        {{blog.minprice}} ~  {{blog.maxprice}}
+        <br>
+        <button class="button"><a href="#">바로가기</a></button>
+        <br>
+    </div> 
+
+    <div id="card">
+        <br>
+            <img src="{%static 'image/icon2.png'%}" class="icon">
+            <br>
+            {{blog.detail}}
+            <br>
+            <div style="font-size:30px;"><b>{{blog.title}}</b></div>
+            
+            {{blog.body}}
+            <br>
+            {{blog.minprice}} ~  {{blog.maxprice}}
+            <br>
+            <button class="button"><a href="#">바로가기</a></button>
+            <br>
+        </div> 
+
+{%endblock%}
