@@ -2,27 +2,46 @@
 <link rel="stylesheet" href="{% static 'css/list.css' %}">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
+
 {%block content%}
-<div class="category">&nbsp;가다실&nbsp;&nbsp;A형 간염&nbsp;&nbsp;대상포진&nbsp;</div>
+<div class="top_bar">
+    <button class="btn_category">가다실</button>
+    <button class="btn_category">A형 간염</button>
+    <button class="btn_category">대상포진</button>
+    <a href="{%url 'reviewhome'%}"><button class="btn_review" style="float:right">
+        후기</button></a>
+</div>
 
 
+<div class="cards">
 {%for blog in blogs%}
 <div id="card">
-<br>
-    <img src="{%static 'image/icon2.png'%}" class="icon">
-    <br>
-    {{blog.detail}}
-    <br>
-    <div style="font-size:30px;"><b>{{blog.title}}</b></div>
+    <div class="card__image-holder">
+        <img class="card__image" src="{% static 'image/img_doctor.jpg' %}" alt="wave" />
+    </div>
     
-    {{blog.body}}
-    <br>
-    {{blog.minprice}} ~  {{blog.maxprice}}
-    <br>
-    <button class="button"><a href="#">바로가기</a></button>
-    <br>
+    <span class="card-title">
+        <h2>{{blog.title}}</h2>
+    </span>
+    <div class="card-description">
+    <h3 class="card-vaccine">
+        백신 : {{blog.detail}}
+    </h3>
+    <h3 class="card-place">
+        위치 : {{blog.body}}
+    </h3>
+    <h3 class="card-price">
+        가격 : {{blog.minprice}}원 ~  {{blog.maxprice}}원
+    </h3>
+    
+    <button class="move_button">
+        <a href="#">바로가기</a>
+    </button>
+</div>
 </div> 
+
 {%endfor%}
+</div>
 
 
 {%endblock%}

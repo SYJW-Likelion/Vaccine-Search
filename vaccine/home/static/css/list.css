@@ -1,17 +1,84 @@
-.category {
-  font-size: 30px;
+:root {
+  --lightBG-color: #dce1df;
+  --salmon-color: #ff6666;
+  --teal-color: #0096a0;
+  --tealMid-color: #0ebac7;
+  --tealContrast-color: #33ffff;
+  --tealShade-color: #007c85;
+  --darkGray-color: #4f585e;
+  --primary-color: #53e3a6;
 }
+
+html {
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+button {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+  color: var(--darkGray-color);
+  font-size: inherit;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.top_bar {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+  margin-left: 110px;
+  margin-right: 120px;
+}
+
+.btn_review {
+  background-color: var(--primary-color);
+  color: white;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.btn_review:hover {
+  background-color: #007c85;
+  border: white;
+}
+
+body {
+  background: var(--lightBG-color);
+  color: var(--darkGray-color);
+  font-family: "Source Sans Pro", sans-serif;
+  text-rendering: optimizeLegibility;
+  margin-top: 50px;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.cards {
+  width: 100%;
+}
+
 #card {
   width: 300px;
-  height: 300px;
-  background: pink;
+  background: white;
   /* border-color:aqua; */
   border-radius: 10px;
-  float: left;
-  margin: 10px;
+  margin: 20px;
   padding: 12px;
-  text-align: center;
   line-height: 30px;
+  float: left;
 }
 
 .icon {
@@ -28,4 +95,27 @@
 a {
   text-decoration: none;
   color: black;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card-description {
+  text-align: start;
+  margin-left: 12%;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.move_button {
+  width: 70%;
+  margin-left: 10%;
+}
+
+a {
+  text-align: center;
 }
