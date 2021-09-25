@@ -1,7 +1,23 @@
 {% block content %}
+<style>
+    body{text-align:center;}
+    #card {
+    width: 500px;
+    height: 400px;
+    background: pink;
+    border-radius: 10px;
+    margin: 1px 380px;
+    padding: 12px;
+    line-height: 30px;
+  }
+</style>
 
+<body>
+<br>
 <h1>Creating New Review!</h1>
 
+
+<div id="card">
 <form action="{%url 'new'%}" method="POST" enctype="multipart/form-data">
     {%csrf_token%}
     {% for field in form %}
@@ -19,4 +35,6 @@
     {% endfor %}
     <button type="submit">Review Upload</button>
 </form>
+</div>
+</body>
 {% endblock %}
