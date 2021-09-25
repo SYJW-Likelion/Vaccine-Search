@@ -24,5 +24,10 @@ urlpatterns = [
     path('', home, name='home'),
     # path('vaccine/', vaccine, name='vaccine'),
     path('accounts/', include('account.urls')),
+
     path('review/', include('review.urls')),
+
+    path('list/', list, name='list'),
+
+
 ]
